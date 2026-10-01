@@ -212,7 +212,7 @@ class SubmissionDetailView(APIView):
         submission = get_object_or_404(Submission, pk=pk)
         if submission.student_id != request.user.id and request.user.role not in ('instructor', 'admin'):
             return Response(
-                {'message': 'You do not have permission to view this submission.'},
+                {'message': 'You do not have pemission.'},
                 status=403,
             )
         return Response({'submission': SubmissionSerializer(submission).data})
